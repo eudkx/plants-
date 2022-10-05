@@ -1,0 +1,64 @@
+.contact {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @media (max-width: 1360px) {
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // @media (max-width: 1100px) {
+  //   flex-direction: column;
+  // }
+  &-title {
+    width: 60%;
+    @include fonts_again($Lora, 16, 40);
+    // @media (max-width: 1100px) {
+    //   width: 100%;
+    // }
+  }
+  &-form {
+    width: 425px;
+    @media (max-width: 1360px) {
+      width: 35%;
+    }
+    // @media (max-width: 1100px) {
+    //   width: 100%;
+    // }
+    @media (max-width: 900px) {
+      height: 35px;
+    }
+    height: 50px;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__input {
+      @include fonts-again($ALight, 6, 13);
+      border: 0;
+      height: 20px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+    &__input:focus {
+      outline: none;
+    }
+    &__btn {
+      @include fonts-again($ALight, 7, 11);
+
+      // height: 35px;
+      color: white;
+      .btn-title {
+        @media (max-width: 1360px) {
+          padding: .8vw 2vw;
+        }
+        padding: 9px 30px;
+        font-weight: 100;
+
+      }
+    }
+    border-bottom: 1px solid black;
+  }
+}

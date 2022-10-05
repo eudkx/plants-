@@ -1,0 +1,72 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0px;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+@font-face {
+  font-family: "Aeonik Light";
+  src: url("../fonts/Aeonik-Light.otf");
+}
+@font-face {
+  font-family: "Aeonik Regular";
+  src: url("../fonts/Aeonik-Regular.otf");
+}
+@font-face {
+  font-family: "Aeonik Medium";
+  src: url("../fonts/Aeonik-Medium.otf");
+}
+
+$ALight: "Aeonik Light";
+$Lora: "Lora", serif;
+$ARegular: "Aeonik Regular";
+$AMeduim: "Aeonik Medium";
+
+// body {
+//   // overflow: hidden;
+//   // height: 2000px;
+// }
+.container {
+  // max-height: 100px;
+  background-color: white;
+  margin: 0 auto;
+
+  padding: 0 10px;
+  max-width: 1380px;
+  width: 100%;
+}
+
+
+@mixin fonts($ff, $fz, $vw, $f, $s) {
+  font-family: $ff;
+  font-size: $fz;
+  @media (max-width: 1360px) {
+    font-size: calc($vw + calc($f - $s) * (100vw / 1360));
+  }
+}
+
+@mixin fonts_again($ff, $min, $max) {
+  font-family: $ff;
+  font-size: #{$max + "px"};
+  @media (max-width: 1360px) {
+    font-size: calc(#{$min + "px"} + #{100 / 78 + "vw"});
+  }
+  @media (max-width: 400px) {
+    font-size: calc(#{$min - 2 + "px"} + #{(100 - 20) / 78 + "vw"});
+  }
+}
+
+// @mixin responsiveP ($s, $)
+
+@mixin headline() {
+  @include fonts($AMeduim, 20px, 7px, 18, 6);
+  // line-height: 10%
+  letter-spacing: 1.2px;
+}
+
+@mixin title() {
+  @include fonts($Lora, 36px, 16px, 24, 16);
+}
